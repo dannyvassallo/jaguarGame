@@ -1,0 +1,77 @@
+        <!-- *************************************************** -->
+        <!-- SCENE 3 [ OUTLOOK WITH HOUSE ]-->   
+        <!-- *************************************************** -->                     
+        <li id="scene3" data-scene='{
+              "foreground":"3_foreground", 
+                "horizon":"30,120",
+                "music":"outside", 
+                "background":"3"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.4,0.8", 
+                    "pos":"65,98", 
+                    "speed":7000
+        }'></div> 
+                
+        <!-- SHOVEL -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"20,70", 
+                    "text":"shovel",
+                  "image":"shovel", 
+                    "scale":"0.65", 
+                    "pick_up":[ ["say:Now what?"] ],
+                    "look_at_text":"Standard in every adventure game.",
+                    "inv_look_at_text":"Yup, it&apos;s a shovel.",
+                    "proximity":50,
+                    "inv_use":[
+                      ["with:pile of dirt"],
+                        ["say:I found treasure, but my shovel broke."],
+                        ["inv_remove:shovel"],
+                        ["inv_add:coins"],
+                        ["play_sound:coins"],
+                        ["hide:pile of dirt"]
+                    ]
+                }'></div> 
+
+        <!-- CLOSED DOOR -->
+                <div class="JAG_Item" data-item='{
+                  "type":"object", 
+                    "pos":"44.6,46.5", 
+                    "text":"door", 
+                    "open_text":"It&apos;s locked.", 
+                    "image":"door", 
+                    "scale":"1",
+                    "open":[
+            ["show:Enter House"],
+                        ["hide:door"],
+                        ["inv_remove:key"],
+                        ["must_have:key"],
+                        ["play_sound:door_lock"]
+                    ],
+          "not_ready_text":"It&apos;s locked."
+        }'></div>
+                
+                <!-- OPEN DOOR -->
+                <div class="JAG_Item s3_exit2" data-item='{
+                  "image":"opendoor",
+                  "type":"exit", 
+                    "hidden":true, 
+                    "pos":"45,48", 
+                    "goto":"scene7", 
+                    "text":"Enter House", 
+                    "image":"opendoor",
+                    "next_image":"guybrush_still_down", 
+                    "exit_style":"false,true"
+        }'></div>
+                
+                <!-- LAYER ITEMS (ROCK AND STATUE) -->
+                <div class="JAG_Item s3_rock" data-item='{"image":"scene3_rock", "pos":"30,59", "type":"layer", "text":false, "proximity":350}'></div>
+                <div class="JAG_Item s3_statue" data-item='{"image":"scene3_statue", "pos":"70.15,25.85", "type":"layer", "text":"strange statue", "look_at_text":"It&apos;s a strange statue...", "proximity":350}'></div>
+                
+                <!-- EXIT -->
+                <div class="JAG_Item s3_exit1" data-item='{"type":"exit", "pos":"60,95", "goto":"scene1", "text":"Back to Crossroads", "next_image":"guybrush_still_left", "next_pos":"67,49"}'></div>
+            </li>
+            
+            

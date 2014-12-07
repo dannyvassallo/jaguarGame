@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "The Middleman" %></title>
+    
+    <%= stylesheet_link_tag "normalize", "all" %>
+        <!-- JAGUAR CSS -->
+    <link rel="stylesheet"  href="Jaguar/css/jquery-Jaguar-1.4.css" type="text/css" media="all" />
+
+  <!-- DEMO GAME CSS -->
+    <link rel="stylesheet" type="text/css" href="Jaguar/css/game.css"/>    
+
+  <!-- LOAD JQUERY -->
+    <script src="Jaguar/js/jquery-1.11.1.min.js"></script>
+
+  <!-- LOAD JAGUAR MODULES -->
+    <script src="Jaguar/js/jquery-jaguar-1.4.js"></script>
+    <script src="Jaguar/js/debug.js"></script>
+    <script src="Jaguar/js/physics.js"></script>
+    <script src="Jaguar/js/scene.js"></script>
+    <script src="Jaguar/js/characters.js"></script>
+    <script src="Jaguar/js/items.js"></script>
+    <script src="Jaguar/js/actions.js"></script>
+    <script src="Jaguar/js/secondary_actions.js"></script>
+    <script src="Jaguar/js/dialogue.js"></script>
+    <script src="Jaguar/js/parser.js"></script>
+    <script src="Jaguar/js/cutscenes.js"></script>
+    <script src="Jaguar/js/save_load.js"></script>
+    <script src="Jaguar/js/audio.js"></script>
+    <%= javascript_include_tag  "all" %>
+  </head>
+  
+  <body class="<%= page_classes %>">
+    <%= partial "partials/_initGame" %>
+    <%= yield %>
+  </body>
+</html>

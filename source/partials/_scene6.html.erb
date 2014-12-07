@@ -1,0 +1,42 @@
+        <!-- **************************************************** -->
+        <!-- SCENE 6 [ DUNGEON 1 ] -->   
+        <!-- **************************************************** -->                
+        <li id="scene6" data-scene='{
+              "foreground":"3_foreground", 
+                "horizon":"20,100",
+                "music":"beach",
+                "background":"6"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.25,0.5", 
+                    "pos":"12,38", 
+                    "speed":10000
+        }'></div> 
+
+                <!-- KEY -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"15,75", 
+                    "text":"key",
+                    "proximity":70,
+                  "image":"key", 
+                    "scale":"0.35", 
+                    "pick_up":[ 
+                      ["say:I wonder what this opens."] 
+                    ],
+                    "look_at_text":"Why would there be a key down here?",
+                    "inv_look_at_text":"It has a skull on the end.",
+                    "inv_use":[
+                      ["with:door"],
+            ["show:Enter House"],
+                        ["hide:door"],
+                        ["inv_remove:key"],
+                        ["play_sound:door_lock"]
+                    ]
+              }'></div>   
+                
+                <!-- EXITS -->
+                <div class="JAG_Item s6_exit1" data-item='{"type":"exit", "pos":"10,20", "goto":"scene5", "text":"Back to Beach", "next_image":"guybrush_still_down", "next_pos":"45,75", "exit_style":"false,true"}'></div>
+                <div class="JAG_Item s6_exit2" data-item='{"type":"exit", "pos":"25,45", "goto":"scene11", "text":"Dungeon", "next_image":"guybrush_still_down", "exit_style":"false,true"}'></div>
+            </li>

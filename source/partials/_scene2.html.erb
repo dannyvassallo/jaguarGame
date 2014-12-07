@@ -1,0 +1,47 @@
+        <!-- ***************************************************** -->
+        <!-- SCENE 2 [ CLEARING WITH PILE OF DIRT ] -->            
+        <!-- ***************************************************** -->            
+        <li id="scene2" data-scene='{
+              "foreground":"2_foreground", 
+                "horizon":"-10,120",
+                "music":"intro2",
+                "background":"2"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.45,0.85", 
+                    "pos":"70,45", 
+                    "speed":8000,
+                    "direction":"down"
+        }'></div> 
+                
+        <!-- PILE OF DIRT -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"40,38", 
+                    "text":"pile of dirt", 
+                    "proximity":50,
+                  "image":"dirt", "scale":"0.65", "pick_up":false,
+                    "look_at_text":"Something tells me I should dig here.",
+                    "pick_up":[
+                      ["say:I can&apos;t just carry dirt around."]
+                    ]
+                }'></div>                   
+                
+                <!-- BURIED TREASURE -->
+                <div class="JAG_Item" data-item='{
+                  "image":"coins", 
+                    "pos":"0,0", 
+                    "hidden":true,
+                    "inv_look_at_text":"Money. Shiny money.", 
+                    "text":"coins"
+                }'></div>        
+            
+                <!-- EXIT -->
+                <div class="JAG_Item s2_exit1" data-item='{"type":"exit", "pos":"80,0", "goto":"scene1", "text":"Back to the Crossroads", "next_image":"guybrush_still_right", "next_pos":"12,90"}'></div>
+            </li>
+            
+            
+            
+            
+            

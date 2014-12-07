@@ -1,0 +1,36 @@
+        <!-- **************************************************** -->
+        <!-- SCENE 4 [ JUNGLE ] -->            
+        <!-- **************************************************** -->
+        <li id="scene4" data-scene='{
+              "foreground":"3_foreground", 
+                "horizon":"30,120",
+                "music":"intro2",
+                "background":"4"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.45,0.85", 
+                    "pos":"20,57", 
+                    "speed":7000
+        }'></div> 
+                
+                <!-- REPAIRED OAR -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"50,60", 
+                    "text":"repaired oar",
+                  "image":"oar", 
+                    "scale":"0.65", 
+                    "pick_up":[ ["say:You never know when you need a broken oar."] ],
+                    "look_at_text":"Odd, there&apos;s an oar in the middle of the jungle.",
+                    "proximity":70,
+                    "inv_look_at_text":"Mostly glue and tape."
+                }'></div>
+
+                <!-- EXITS -->
+                <div class="JAG_Item s4_exit1" data-item='{"type":"exit", "pos":"85,60", "goto":"scene5", "text":"Walk to Beach"}'></div>
+                <div class="JAG_Item s4_exit2" data-item='{"type":"exit", "pos":"10,35", "goto":"scene1", "text":"Back to Crossroads", "next_image":"guybrush_still_up", "next_pos":"80,85"}'></div>
+            </li>
+            
+            
+            

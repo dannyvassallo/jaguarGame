@@ -1,0 +1,44 @@
+        <!-- ************************************************* -->
+        <!-- SCENE 7 [ INSIDE HOUSE OVERLOOKING BEACH ] -->   
+        <!-- ************************************************* -->                     
+        <li id="scene7" data-scene='{
+              "foreground":"7_foreground", 
+                "horizon":"-10,100",
+                "music":"house",
+                "background":"7"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.5,0.6", 
+                    "pos":"75,70", 
+                    "speed":10000
+        }'></div>
+                
+        <!-- FISH -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"39,57", 
+                    "text":"dead fish",
+                    "proximity":75, 
+                    "image":"fish", 
+                    "scale":"0.56", 
+                    "pick_up":[ 
+                      ["say:Just in case I come across any trolls."] 
+                    ],
+                    "look_at_text":"It&apos;s a fish.",
+                    "inv_look_at_text":"He&apos;s cute.",
+          "give":[
+                      ["to:dirtypirate"],
+            ["inv_add:matches"]
+                    ],
+                    "give_text":[
+                      [
+                          ["I brought your lunch. || Kid, just for that you can have<br/> this complimentary book of matches."],
+                            ["I&apos;ve always wanted my very own. || Don&apos;t light em all at once."]
+            ]
+          ]                        
+                }'></div> 
+                                   
+                <!-- EXITS -->
+                <div class="JAG_Item s7_exit1" data-item='{"type":"exit", "pos":"74,28", "goto":"scene3", "text":"Exit House", "next_image":"guybrush_still_right", "next_pos":"55,75"}'></div>
+            </li>

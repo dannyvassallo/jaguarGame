@@ -1,0 +1,56 @@
+        <!-- *****************************************************-->
+        <!-- SCENE 1 [ CROSSROADS ] (WALK_TO POSITION WITH CUTSCENE=62,40) WITHOUT=60,55 -->
+        <!-- *****************************************************-->
+        <li id="scene1" data-scene='{
+              "background":"1",
+              "foreground":"1_foreground", 
+                "horizon":"40,120",
+                "subtitle":"jungle crossroads",
+                "subtitle_speed":"3500,2000",
+                "subtitle_color":"#57f2e0",
+                "subtitle_pos":"bottom",
+                "music":"intro2"               
+      }'>
+              <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.45,0.85", 
+                    "pos":"20,45", 
+                  "entrance":[
+                        ["walk_to:62,40"],
+                      ["say_after:Welcome to the Jaguar Demo!"]
+                    ],
+                    "speed":8000
+        }'></div>
+        
+                <!-- ENVELOPE -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"45,63", 
+                    "text":"envelope",
+                  "image":"envelope", 
+                    "scale":"0.5", 
+                    "pick_up":[
+                      ["say:I should open it."]
+                    ],
+                    "look_at_text":"I should probably read it...<br/>like the manual.",
+                    "inv_look_at_text":"I got it from the crossroads...",
+                    "open_text":"I need to pick up the envelope before I can open it.",
+                    "proximity":50,
+                    "inv_open":[
+                      ["say:To leave this Scene<br/> simply walk into an Exit or double click it<br/> to quickly advance to the next Scene."],
+                        ["play_sound:pageflip"],
+                        ["inv_remove:envelope"]
+                    ]
+                }'></div>
+                
+                <!-- LAYER OBJECTS (PLANTS) FOR DEPTH -->
+                <div class="JAG_Item s1_bush1" data-item='{"image":"scene1_bush1", "pos":"67.7,61.25",  "type":"layer", "text":false}'></div>
+                <div class="JAG_Item s1_bush2" data-item='{"image":"scene1_bush2", "pos":"0,0",    "type":"layer", "text":false}'></div>
+                <div class="JAG_Item s1_bush3" data-item='{"image":"scene1_bush3", "pos":"63.6,8.85", "type":"layer", "text":false}'></div>
+                
+                <!-- EXITS -->
+                <div class="JAG_Item s1_exit1" data-item='{"type":"exit", "pos":"0,80",  "goto":"scene2", "text":"Walk to Clearing"}'></div>
+                <div class="JAG_Item s1_exit2" data-item='{"type":"exit", "pos":"75,12", "goto":"scene3", "text":"Walk to Lookout"}'></div>
+                <div class="JAG_Item s1_exit3" data-item='{"type":"exit", "pos":"80,85", "goto":"scene4", "text":"Follow Jungle Path"}'></div>
+                <div class="JAG_Item s1_exit4" data-item='{"type":"exit", "pos":"0,30",  "goto":"scene8", "text":"Walk to Town", "next_image":"guybrush_still_down"}'></div>
+          </li>

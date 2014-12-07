@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* 	THIS STYLESHEET IS USED FOR ANY SPECIAL ITEM STYLING REQUIRED FOR YOUR GAME 
+THAT SHOULDN'T BE ADDED TO THE CORE JAGUAR CSS FILE. THAT MAJORITY OF THIS FILE
+WILL CONTAIN EXIT DIMENSIONS THAT YOU ASSIGN WITH YOUR CLASSES. */
+body{margin:0;}
+#wrapper {width:1028px;}
+
+/* EXIT DIMENSIONS */
+.s1_bush1 {width:331px;height:64px;}
+.s1_bush2 {width:581px;height:315px;}
+.s1_bush3 {width:373px;height:245px;}
+.s1_bush4 {width:193px;height:183px;}
+.s1_exit1 {width:150px; height:100px;}
+.s1_exit2 {width:180px; height:80px;}
+.s1_exit3 {width:210px; height:80px;}
+.s1_exit4 {width:100px; height:80px;}
+.s2_exit1 {width:250px; height:100px;}
+.s3_rock {width:249px; height:103px;}
+.s3_statue {width:200px; height:260px;}
+.s3_exit1 {width:250px; height:50px;}
+.s3_exit2 {width:84px; height:124px;}
+.s4_exit1 {width:150px; height:150px;}
+.s4_exit2 {width:150px; height:150px;}
+.s5_exit1 {width:50px; height:80px;}
+.s5_exit2 {width:50px; height:80px;}
+.s5_house {width:76px; height:55px;}
+.s6_exit1 {width:100px; height:80px;}
+.s6_exit2 {width:250px; height:100px;}
+.s7_exit1 {width:80px; height:80px;}
+.s8_exit1 {width:80px; height:150px;}
+.s8_exit2 {width:60px; height:70px;}
+.s8_exit3 {width:120px; height:150px;}
+.s8_exit4 {width:80px; height:150px;}
+.s8_canon {width:112px; height:89px;}
+.s9_exit1 {width:60px; height:150px;}
+.s9_exit2 {width:129px; height:135px;}
+.s10_exit1 {width:60px; height:150px;}
+.s10_counter {width:355px; height:177px;}
+.s11_exit1 {width:350px; height:350px;}
+.s12_exit1 {width:350px; height:350px;}
+.s13_exit1 {width:150px; height:100px;}

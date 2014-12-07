@@ -1,0 +1,260 @@
+@charset "utf-8";
+/******************************************************************************
+  $Jaguar v1.4 || CRUSADER12 || EXCLUSIVE TO CODECANYON
+  Core CSS File
+  
+  LAYERING REFERENCE:
+  Path:		  			  		2
+  Item [type=object]:	  		3
+  Item [type=exit with image]: 	3
+  Character:  			  		4
+  Item [type=layer]: 	  		6	
+  Foreground: 			  		9  
+  Day/Night Cycle Layer:		10
+  Save Menu:			  		15(Overlay)/20(Menu)
+******************************************************************************/
+
+/* RESET */
+.JAG_Adventure * {vertical-align: baseline;margin:0;font-size:100%;padding:0;line-height:100%;border:0;cursor:crosshair;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;box-sizing:content-box;}
+/* FORCE GPU */
+.JAG_Foreground,
+ul.JAG_Chapter li,
+ul.JAG_Chapter li .JAG_Background,
+ul.JAG_Chapter li .JAG_Item,
+ul.JAG_Chapter li .JAG_Char,
+ul.JAG_Chapter li .JAG_Aux_Char
+{-o-transform:translate3d(0,0,0);-moz-transform:translate3d(0,0,0);-ms-transform:translate3d(0,0,0);transform:translate3d(0,0,0);}
+
+
+/******************************************************************************/
+/* DIMENSIONS - ALL DIMENSIONS ARE LISTED HERE TO EASE WITH RESPONSIVE SETUP. */
+/******************************************************************************/
+ul.JAG_Chapter,
+ul.JAG_Chapter li,
+.JAG_Desc,
+.JAG_Panel,
+#JAG_Debug,
+div.JAG_Preloader,
+.JAG_Foreground {width:1024px;height:500px;}				/* MAIN VIEWPORT DIMENSIONS */
+.JAG_DayNightCycle {width:100%; height:500px;}				/* DAY/NIGHT CYCLE OVERLAY */
+.JAG_SaveMenu_Overlay,
+.JAG_Adventure, #JAG_Scene_Dialogue, 
+#JAG_dialogue {width:1024px;} 								/* MAIN CONTAINER */
+.JAG_Actions {width:498px;}					 				/* LEFT SIDE OF PANEL (ACTIONS) */
+.JAG_Inventory {width:526px;}								/* RIGHT SIDE OF PANEL (INVENTORY) [FULL WIDTH - JAG_ACTIONS WIDTH INCLUDING PADDING] */
+.JAG_Actions ul {padding-top:15px}							/* PADDING FOR ACTION BUTTON COLUMNS */
+.JAG_Actions ul.JAG_Column1 {width:145px; padding-left:25px;} /* WIDTH OF ACTION BUTTON COLUMNS */
+.JAG_Actions ul.JAG_Column2 {width:195px;}					
+.JAG_Actions ul.JAG_Column3 {width:120px;}					
+.JAG_Actions ul li {height:65px;}							/* ACTION WORD HEIGHT */
+.JAG_Panel, .JAG_Actions, .JAG_Inventory, 
+#JAG_dialogue, .JAG_Inv_Arrows {height:210px;}				/* HEIGHT OF BOTTOM PANEL AND ELEMENTS */
+.JAG_Inv_Arrows {width:50px;}								/* INVENTORY SCROLLING */
+.JAG_Inv_Arrows div {width:50px; height:103px; margin-bottom:4px;}
+.JAG_Inventory ul {width:476px;}								/* INVENTORY CONTAINER WIDTH [JAG_INVENTORY - JAG_INV_ARROWS] */
+.JAG_Inventory ul li 
+{margin:0 0 4px 4px; width:115px; height:103px;}			/* INVENTORY ITEM DIMENSIONS */
+.JAG_Desc {height:50px;padding:5px 0;}						/* HEIGHT OF DESCRIPTION BAR */
+.JAG_SaveMenu {width:500px; height:100px; padding:15px;}	/* DIMENSIONS OF SAVE MENU */
+.JAG_SaveMenu_Overlay, .JAG_Adventure {height:768px;}		/* FULL VIEWPORT HEIGHT */
+#teaser_container {width:1024px; padding-top:240px;}
+#teaser_container img {width:200px; margin-left:160px;}
+
+
+/******************************************************************************/
+/* FONTS     																  */
+/******************************************************************************/
+@font-face {font-family:'onesizeregular';
+    src: url('fonts/onesize_.eot');
+    src: url('fonts/onesize_.eot?#iefix') format('embedded-opentype'),
+         url('fonts/onesize_.woff') format('woff'),
+         url('fonts/onesize_.ttf') format('truetype'),
+         url('fonts/onesize_.svg#onesizeregular') format('svg');
+    font-weight: normal;font-style: normal;}
+
+@font-face {font-family: 'onesize_reverseregular';
+    src: url('fonts/onesr___.eot');
+    src: url('fonts/onesr___.eot?#iefix') format('embedded-opentype'),
+         url('fonts/onesr___.woff') format('woff'),
+         url('fonts/onesr___.ttf') format('truetype'),
+         url('fonts/onesr___.svg#onesize_reverseregular') format('svg');
+    font-weight: normal;font-style: normal;}
+
+.JAG_Desc p, .JAG_Desc span {font-family:'onesizeregular',sans; font-size:22px; line-height:30px; text-align:center; }
+.JAG_Actions ul li {font-family:'onesize_reverseregular',sans; font-size:38px; letter-spacing:0.5px;}	
+#JAG_Scene_Dialogue {font-family:'onesizeregular', sans; font-size:22px;}
+.JAG_question {font-family:'onesizeregular', sans; font-size:20px;}
+p.JAG_Char_Dialogue {font-family:'onesizeregular', sans; font-size:22px;}
+.JAG_SaveMenu, .JAG_SaveMenu p, .JAG_SaveMenu .JAG_Save, .JAG_SaveMenu .JAG_Load {font-family:'onesizeregular', sans; font-size:36px;}
+.JAG_SaveMenu p {font-size:20px;}
+.JAG_Debug_Window div, .JAG_Debug_Window, .JAG_Debug_Window h2, #JAG_EXP {font-family:Courier,sans;}
+.JAG_Debug_Window h2 {letter-spacing:-1px; font-size:18px;}
+.JAG_Debug_Window input[type=text] {font-size:10px;}
+.JAG_Adventure strong {font-weight:bold;}
+.JAG_Adventure em {font-style:italic;}
+div.JAG_Preloader p {font-family:'onesizeregular',sans; font-size:22px;}
+#teaser_container h1 {font-family:'onesizeregular',sans; font-size:22px; line-height:36px;}
+
+
+
+
+/******************************************************************************/
+/* COLOR SCHEME																  */
+/******************************************************************************/
+.JAG_Adventure {background-color:#000000; position:relative;}
+.JAG_Desc {background-color:#000000; color:#7c2c7c; display:none;}
+.JAG_Desc p, .JAG_Desc span {color:#7c2c7c;}
+.JAG_Panel {background-color:#000000; display:none;}
+.JAG_Actions ul li {color:#7c2c7c; -webkit-transition:all 0.5s ease; -o-transition:all 0.5s ease; -moz-transition:all 0.5s ease; -ms-transition:all 0.5s ease; transition:all 0.5s ease;}
+.JAG_Actions ul li:hover {color:#ca52ca;}
+#JAG_Scene_Dialogue, .JAG_Char_Dialogue {color:#FFFFFF;opacity:0;}
+#JAG_dialogue {background:#000000; opacity:0;}
+.JAG_question {color:#7c2c7c;}
+.JAG_question:hover {border-bottom:1px solid #290F2B;
+	color:#FFF;
+	background: rgb(0,0,0); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(41,15,43,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(41,15,43,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(41,15,43,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(41,15,43,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(41,15,43,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(41,15,43,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#290f2b',GradientType=0 ); /* IE6-9 */}
+.JAG_Inventory ul li {background:#1d0a1e; -webkit-transition:all 0.15s ease; -o-transition:all 0.15s ease; -moz-transition:all 0.15s ease; -ms-transition:all 0.15s ease; transition:all 0.15s ease;}	
+.JAG_Inventory ul li:hover {background:#38133a;}
+.JAG_SaveMenu {background:#000000; color:#7C2C7C; border:6px double #ca52ca;}
+.JAG_SaveMenu .JAG_Save, .JAG_SaveMenu .JAG_Load {background:#1D0A1E;}
+.JAG_SaveMenu .JAG_Save:hover, .JAG_SaveMenu .JAG_Load:hover {background:#38133a; color:#ca52ca;}
+.JAG_Debug_Window div, .JAG_Debug_Window, .JAG_Debug_Window h2 {color:#ffe400;}
+#JAG_EXP, #JAG_Debug_currentScene, div.JAG_Preloader p {color:#FFF;}
+.JAG_Debug_Window input[type=text] {color:#333;}
+#JAG_jumpToScene {background-color:#ffe400; color:#0226ff;}
+#teaser_container h1 {color:#FFFFFF;}
+.JAG_DayNightCycle {background-color:#151925;}
+
+
+
+/******************************************************************************/
+/* DIALOGUE STYLES															  */
+/******************************************************************************/
+/* SCENE SUBTITLES */
+#JAG_Scene_Dialogue {position:absolute; z-index:11; text-align:center; padding:10px 0; text-shadow:2px 2px 0px #000, -2px -2px 0px #000; opacity:1;}
+/* CHARACTERS */
+.JAG_Char_Dialogue {/* DO NOT CHANGE MAX WIDTH */max-width:70%!important; position:absolute; z-index:99999!important; text-align:center; padding:10px 0; display:none; text-shadow:2px 2px 0px #000, -2px -2px 0px #000;}
+/* QUESTIONS PANEL */
+#JAG_dialogue {position:absolute; z-index:11; display:none;}
+.JAG_question {border-bottom:1px solid transparent; padding:0px 0px 2px 25px; margin-top:10px;}
+
+
+
+
+/******************************************************************************/
+/* EASING (CHANGE AT YOUR OWN RISK)
+/******************************************************************************/
+ul.JAG_Chapter li {transition:margin-left 0.75s linear;}
+
+
+
+
+/******************************************************************************/
+/* CONTAINER STYLES															  */
+/******************************************************************************/
+/* INITIAL HIDE CONTAINERS */
+ul.JAG_Chapter, div.JAG_Actions, div.JAG_Inventory, div.JAG_Item {display:none;}
+/* PRELOADER */
+div.JAG_Preloader {margin:0 auto; position:absolute;}
+div.JAG_Preloader img {margin:0 auto; display:block; margin-top:250px; margin-bottom:60px;}
+div.JAG_Preloader p {text-align:center;}
+/* CHAPTER CONTAINER */
+ul.JAG_Chapter {position:relative; list-style-type:none; overflow:hidden;}
+/* SCENE CONTAINER */
+ul.JAG_Chapter li {position:relative;display:none;}
+div.JAG_Foreground, div.JAG_DayNightCycle {position:absolute;z-index:9;pointer-events:none;}
+div.JAG_DayNightCycle {z-index:10; opacity:0;}
+/* SCENE BACKGROUND */
+ul.JAG_Chapter li .JAG_Background {}
+#JAG_Canvas {position:absolute; z-index:2; top:0; left:0; display:none;}
+/* ITEM (MUST USE BLANK.GIF TO GIVE LAYOUT TO IE) */
+ul.JAG_Chapter li .JAG_Item {position:absolute; z-index:6; background:url(../items/blank.gif) repeat;}
+/* CHARACTERS */
+ul.JAG_Chapter li .JAG_Char {pointer-events:none;}
+ul.JAG_Chapter li .JAG_Char, ul.JAG_Chapter li .JAG_Aux_Char {position:absolute;z-index:4;}
+#teaser_container h1 { cursor:default; padding-top:80px;}
+#teaser_container img { float:left; margin-right:20px;}
+
+
+
+/******************************************************************************/
+/* ACTION PANEL
+/******************************************************************************/
+.JAG_Actions {float:left;}
+.JAG_Actions ul {list-style-type:none;float:left;}
+.JAG_Actions ul li {cursor:pointer;}
+
+
+
+/******************************************************************************/
+/* INVENTORY
+/******************************************************************************/
+.JAG_Inventory {float:right;overflow:hidden;}
+.JAG_Inventory ul {list-style-type:none;float:right;
+	-webkit-transition:all 0.5s ease; -o-transition:all 0.5s ease; -moz-transition:all 0.5s ease; -ms-transition:all 0.5s ease; transition:all 0.5s ease;}
+.JAG_Inv_Arrows {float:left;}
+.JAG_Inv_Arrows div.JAG_Arrow_Up {background:url(../images/arrow_up.png) no-repeat; cursor:pointer; opacity:0.5; visibility:hidden;
+	-webkit-transition:opacity 0.5s ease; -o-transition:opacity 0.5s ease; -moz-transition:opacity 0.5s ease; -ms-transition:opacity 0.5s ease; transition:opacity 0.5s ease;}
+.JAG_Inv_Arrows div.JAG_Arrow_Down {background:url(../images/arrow_down.png) no-repeat; cursor:pointer; opacity:0.5; visibility:hidden;
+	-webkit-transition:opacity 0.5s ease; -o-transition:opacity 0.5s ease; -moz-transition:opacity 0.5s ease; -ms-transition:opacity 0.5s ease; transition:opacity 0.5s ease;}
+.JAG_Inv_Arrows div.JAG_Arrow_Up:hover,
+.JAG_Inv_Arrows div.JAG_Arrow_Down:hover {opacity:1;}
+.JAG_Inventory ul li {float:left;}
+.JAG_Inventory ul li img {cursor:pointer; -moz-transform:scale(1,1); -webkit-transform:scale(1,1); -ms-transform:scale(1,1); -o-transform:scale(1,1); transform:scale(1,1);
+	-webkit-transition:all 0.15s ease; -o-transition:all 0.15s ease; -moz-transition:all 0.15s ease; -ms-transition:all 0.15s ease; transition:all 0.15s ease;}
+.JAG_Inventory ul li img:hover {-o-transform:scale(1.1,1.1); -webkit-transform:scale(1.1,1.1); -moz-transform:scale(1.1,1.1); -ms-transform:scale(1.1,1.1); transform:scale(1.1,1.1);}
+
+
+
+/******************************************************************************/
+/* SAVE MENU
+/******************************************************************************/
+.JAG_SaveMenu_Overlay {position:absolute; z-index:15; background:#000000; display:none;}
+.JAG_SaveMenu {position:absolute; z-index:20; margin-top:220px; display:none;}
+.JAG_SaveMenu p {text-align:center;}
+.JAG_SaveMenu .JAG_Save {float:left;margin-right:20px;}
+.JAG_SaveMenu .JAG_Save, .JAG_SaveMenu .JAG_Load {display:inline-block; margin-top:20px;padding:10px;
+	-webkit-transition:all 0.5s ease; -o-transition:all 0.5s ease; -moz-transition:all 0.5s ease; -ms-transition:all 0.5s ease; transition:all 0.5s ease;}
+ 
+
+
+/******************************************************************************/
+/* DEBUG TOOLS 																  */
+/******************************************************************************/
+.JAG_Debug_Window {width:600px; height:250px; background:#0226ff; position:absolute; z-index:9999999999; border:5px double #ffe400; padding:20px 30px; display:none; cursor:default;}
+.JAG_Debug_Window h2, #JAG_EXP {text-align:center;cursor:default; height:25px;}
+.JAG_Debug_Window h2 {width:100%; text-align:center; font-weight:bold;}
+.JAG_Debug_Window input {margin-bottom:8px; cursor:default;}
+.JAG_Debug_Window input[type=text] {cursor:text; line-height:15px; margin-top:10px; padding:10px 5px; height:10px;}
+#JAG_jumpToScene {padding:5px 15px; cursor:pointer; float:right; font-weight:bold; margin-top:5px;}
+.JAG_charSpot {position:absolute;z-index:9999;width:5px;height:5px;background:#00ff1e;}
+.JAG_charLines {border:2px solid red;}
+.JAG_itemLines {border:2px solid #a35b1b; opacity:0.95;}
+.JAG_midLine {width:2px;background:#91f1ff;position:absolute;top:0;z-index:9999;}
+.JAG_horizonLine, .JAG_GroundLine {height:2px;background:#ffe400;position:absolute;z-index:999999;-o-transition:all 0.5s ease;-moz-transition:all 0.5s ease;-ms-transition:all 0.5s ease;-webkit-transition:all 0.5s ease;transition:all 0.5s ease;}
+.JAG_Circle {width:100px;height:100px;margin:0 auto;margin-top:-50px;border:5px solid #ffe400;border-radius:200px;z-index:999999;}
+.JAG_horizonLine .JAG_Circle {
+	border-bottom:0;border-right:0;border-left:0;
+	background: -moz-linear-gradient(top,  rgba(255,228,0,1) 0%, rgba(255,228,0,0) 50%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,228,0,1)), color-stop(50%,rgba(255,228,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,228,0,1) 0%,rgba(255,228,0,0) 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,228,0,1) 0%,rgba(255,228,0,0) 50%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,228,0,1) 0%,rgba(255,228,0,0) 50%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,228,0,1) 0%,rgba(255,228,0,0) 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}
+.JAG_GroundLine .JAG_Circle {
+	border-top:0;border-right:0;border-left:0;
+	background: -moz-linear-gradient(top,  rgba(255,228,0,0) 50%, rgba(255,228,0,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,rgba(255,228,0,0)), color-stop(100%,rgba(255,228,0,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,228,0,0) 50%,rgba(255,228,0,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,228,0,0) 50%,rgba(255,228,0,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,228,0,0) 50%,rgba(255,228,0,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,228,0,0) 50%,rgba(255,228,0,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */}

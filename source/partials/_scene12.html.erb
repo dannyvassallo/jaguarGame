@@ -1,0 +1,60 @@
+        <!-- ************************************************* -->
+        <!-- SCENE 12 [ OUTSIDE TOWN WITH STAN ] -->  
+        <!-- ************************************************* -->                                           
+        <li id="scene12" data-scene='{
+              "horizon":"0,100",
+                "music":"town", 
+                "background":"12"}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.75,0.75", 
+                    "pos":"75,95", 
+                    "speed":7000,
+                    "direction":"left"
+        }'></div>
+                
+        <!-- STAN -->
+              <div class="JAG_Aux_Char" data-character='{
+                  "image":"stan_still_right", 
+                    "talk_image":"stan_talking_right", 
+                    "text":"Stan", 
+                    "proximity":150,
+                  "scale":"0.75,0.75", 
+                    "pos":"45,95",
+                    "speed":7000, 
+                    "text_color":"#ff8400",
+          "talk_to_text":[
+                      [
+                          ["Stan, what are you doing at the Huge Tree? || I&apos;m telling people how cool Jaguar is!"],
+                            ["So, can you seriously build adventure games with this? || Absolutely, with almost all the features of the classics!"],
+                            ["Ooooooh that sounds like a lot of fun! || Yep, and there are some cool addons in the works!"] 
+                        ],
+                        [
+                          ["Is Jaguar only for older games? || Absolutely not! Use any graphics you like, <br/> you aren&apos;t restricted to any one style."]
+                        ],
+                        [
+                            ["Tell me about Inventory Items. || Well, you obtain Items then use them with other<br/> Inventory Items, Scene Items or Characters."],
+                            ["So that&apos;s how I progress through a game! || There are lots of ways - that&apos;s just one of them."],
+                            ["What other ways are there? || Experience Points, Achievements, Actions...<br/>Play the demo and find out!"]                            
+                        ],
+                        [
+                          ["This conversation system is interesting. || Yep - typing Questions and Answers will build<br/> a Character Conversation for you."],
+                            ["What about other text? || Jaguar allows you to assign text to nearly <br/>any action that can be perfomed."],
+                            ["I noticed your text is a different color. || Of course, I&apos;m Stan."]
+                        ]
+                    ],
+                    "done_talking":[
+                      ["say:He said I should run <br/>out and get my copy today!"],
+                        ["walk_to:55,95"]
+                    ],
+          "entrance":[
+                      ["say:It&apos;s Stan!"]
+                    ],
+                    "repeat_entrance":false
+        }'></div>                
+
+                <!-- EXIT -->
+                <div class="JAG_Item s12_exit1" data-item='{"type":"exit", "pos":"95,80", "goto":"scene8", "text":"to Town", "next_image":"guybrush_still_right", "next_pos":"30,95", "next_pan":20, "exit_style":"false,true"}'></div>
+      </li>
+                        

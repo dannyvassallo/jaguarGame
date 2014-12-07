@@ -1,0 +1,59 @@
+        <!-- ********************************************** -->
+        <!-- SCENE 9 [ JAIL ] -->  
+        <!-- ********************************************** -->                                          
+        <li id="scene9" data-scene='{
+              "foreground":"9_foreground", 
+                "horizon":"0,100",
+                "music":"jail",
+                "background":"9", 
+                "pos":50}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.5,0.85", 
+                    "pos":"60,94", 
+                    "speed":8000
+        }'></div>
+                
+                <!-- HAMMER -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"35,60", 
+                    "text":"hammer",
+                    "proximity":50, 
+                    "image":"hammer", 
+                    "scale":"0.4", 
+                    "pick_up":[ ["say:Strange place to find this."] ],
+                    "look_at_text":"It&apos;s a hammer.",
+                    "inv_look_at_text":"Sturdy."
+                }'></div>                 
+                
+                <!-- WALL -->
+                <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"60.6,29.35", 
+                    "text":"damaged wall",
+                    "proximity":150, 
+                    "image":"wall", 
+                    "scale":"1", 
+                    "look_at_text":"The jail wall appears to be damaged over here."
+                }'></div>
+                
+                <!-- HOLE IN JAIL WALL [ EXIT ] -->
+                <div class="JAG_Item s9_exit2" data-item='{
+                  "image":"hole_wall",
+          "type":"exit", 
+                    "pos":"60.6,29.35", 
+                    "hidden":true,
+                    "goto":"scene13", 
+                    "text":"Beneath the Jail", 
+                    "image":"hole_wall",
+                    "next_image":"guybrush_still_down", 
+                    "exit_style":"false,true",
+                    "next_pos":"35,40"
+        }'></div>   
+                
+                <!-- EXITS -->
+                <div class="JAG_Item s9_exit1" data-item='{"type":"exit", "pos":"0,40", "goto":"scene8", "text":"Back to Town", "next_image":"guybrush_still_right", "next_pos":"30,75", "next_pan":0}'></div>
+      </li>                                                                        
+   

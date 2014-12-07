@@ -1,0 +1,40 @@
+        <!-- ******************************************* -->
+        <!-- SCENE 11 [ DUNGEON 2 ] --> 
+        <!-- ******************************************* -->                                            
+        <li id="scene11" data-scene='{
+              "horizon":"0,100",
+                "music":"beach", 
+                "background":"11", 
+                "pos":50}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.5,0.85", 
+                    "pos":"50,95", 
+                    "speed":8000
+        }'></div>
+                
+        <!-- DYNAMITE -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"25,85", 
+                    "text":"dynamite",
+                    "proximity":50, 
+                    "image":"dynamite", 
+                    "scale":"0.7", 
+                    "pick_up":true,
+                    "inv_look_at_text":"BOOM.",
+                    "inv_use":[
+                      ["with:damaged wall"],
+                        ["play_sound:crumble"],
+                        ["req_sprite:dynamitelit"],
+                        ["hide:damaged wall"],
+                        ["show:Beneath the Jail"],
+                        ["inv_remove:dynamite"],
+                        ["say:I&apos;ve blown open some kind of passageway."]
+                    ]                    
+                }'></div>  
+                                                
+                <!-- EXIT -->
+                <div class="JAG_Item s11_exit1" data-item='{"type":"exit", "pos":"30,10", "goto":"scene6", "text":"Exit", "next_image":"guybrush_still_down", "next_pos":"30,80", "exit_style":"false,true"}'></div>
+      </li> 

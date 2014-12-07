@@ -1,0 +1,53 @@
+        <!-- ************************************************* -->
+        <!-- SCENE 8 [ TOWN - OUTSIDE ] -->  
+        <!-- ************************************************* -->       <li id="scene8" data-scene='{
+              "horizon":"60,112",
+                "music":"journey",
+                "background":"8", 
+                "pos":50}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.2,0.85", 
+                    "pos":"60,94", 
+                    "speed":8000
+        }'></div>
+
+                
+                <!-- TIN CUP -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"47,66", 
+                    "text":"cup",
+                    "proximity":100, 
+                    "image":"cup", 
+                    "scale":"0.2", 
+                    "pick_up":[ ["say:Empty."] ],
+                    "look_at_text":"Someone left a cup here.",
+                    "inv_look_at_text":"The word &apos;<strong>Grog</strong>&apos; is<br/> etched into the bottom."
+                }'></div> 
+                
+                <!-- MAP -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"46,78", 
+                    "pick_up":[
+                      ["say:Got it!"]                    
+                    ],
+                    "text":"map",
+                    "proximity":100, 
+                    "image":"map", 
+                    "scale":"0.25", 
+                    "look_at_text":"It looks like a map.",
+                    "inv_look_at_text":"I need to find someone that can make sense of it."
+                }'></div>                                      
+                
+                <!-- LAYER ITEM (CANON) -->
+        <div class="JAG_Item s8_canon" data-item='{"image":"canon","type":"layer", "pos":"10.4,73", "text":"canon", "look_at_text":"A canon.", "pick_up_text":"Maybe later."}'></div>                
+                
+                <!-- EXITS -->
+                <div class="JAG_Item s8_exit1" data-item='{"type":"exit", "pos":"95,60", "goto":"scene1", "text":"Jungle Crossroads", "next_image":"guybrush_still_right", "next_pos":"30,55"}'></div>
+                <div class="JAG_Item s8_exit2" data-item='{"type":"exit", "pos":"14,53", "goto":"scene9", "text":"Enter Jail", "next_image":"guybrush_still_right", "next_pos":"20,70", "exit_style":"false,true"}'></div>
+                <div class="JAG_Item s8_exit3" data-item='{"type":"exit", "pos":"80,52", "goto":"scene10", "text":"Enter Stan&apos;s Previously Owned Coffins", "next_image":"guybrush_still_down", "exit_style":"false,true" }'></div>
+                <div class="JAG_Item s8_exit4" data-item='{"type":"exit", "pos":"0,60", "goto":"scene12", "text":"Walk to Huge Tree", "next_image":"guybrush_still_left"}'></div>
+            </li>

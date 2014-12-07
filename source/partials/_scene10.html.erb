@@ -1,0 +1,147 @@
+        <!-- ***************************************************** -->
+        <!-- SCENE 10 [ COFFIN SHOP WITH DIRTY PIRATE ] -->    
+        <!-- ***************************************************** -->                                         
+        <li id="scene10" data-scene='{
+              "foreground":"10_foreground", 
+                "horizon":"0,100",
+                "music":"shop",
+                "background":"10", 
+                "pos":50,
+                "indoor":true}'>
+                
+                <!-- MAIN CHARACTER -->
+              <div class="JAG_Char" data-character='{
+                  "scale":"0.5,0.85", 
+                    "pos":"75,94", 
+                    "speed":8000,
+                    "entrance":[
+                      ["say:There&apos;s a dirty pirate<br/> behind the counter."]
+                    ],
+                    "repeat_entrance":false
+        }'></div>
+
+        <!-- DIRTY PIRATE -->
+        <div class="JAG_Aux_Char" data-character='{
+                  "image":"pirate_down",
+                    "talk_image":"pirate_talking",
+                    "pos":"35,70",
+                    "proximity":250,
+                    "scale":"0.5,0.85",
+                    "text":"dirty pirate",
+                    "look_at_text":"He&apos;s dirty and won&apos;t <br/> stop doing that belly thing.",
+                    "pick_up_text":"I don&apos;t think I can.",
+                    "talk_to_text":[
+                      [
+                        ["You&apos;re not Stan. || Nope. I isn&apos;t."],
+                            ["So... what are you doing here? || Err, I&apos;m just watching <br> the shop for him. What can I do for ya?"],
+                          ["Who lives in that house overlooking the ocean? || Me! I was in such a rush to help Stan ... <br/> I forgot my lunch."],
+                            ["And you&apos;ll give me something <br/>awesome if I bring it for you? || I have the only key and ain&apos;t about to give<br/> it to you! But I even made my favorite today - fish!"]
+                        ],
+                        [
+                          ["What have you heard about this... crusader12? || Stellar support and great products. <br/> What else d&apos;ya want?"],
+                            ["How is the documentation? || It has pictures... - of course it&apos;s awesome!"],
+                          ["Where is that music coming from? || Hey... you can hear it to? <br/>It&apos;s like a crazy MP3 on loop somewhere..."],
+                          ["I saw something about a built-in debugger? || Oh yeah! Hit ESC to open it at any time!"],
+                            ["Woah! So I can see everything I&apos;m doing and easily <br/> track any issues I run into! || It makes life easy. Now... are you gonna buy somethin?"]
+                        ],
+                        [
+                          ["So, I&apos;m thinking about buying Jaguar... || This demo sure is convincing!"],
+                            ["...but I can barely write a web page let alone a game... || Ha! Kid, this is easy. All you have <br/> to worry about are the graphics."]
+                        ],
+                        [
+                          ["Tell me about the Experience Points System. || After the main Character <em>(you)</em> perform <br> an Action, you can optionally award Experience Points."],
+                            ["Like when I pick something up? || Exactly! Then, you can set Achievements."],
+                            ["What are Achievements for? || They won&apos;t allow an Action to occur until an<br/> Achievement has been met...<br/> like 100 Experience Points!"],
+              ["Sounds pretty easy! || Jaguar is built for everyone to have fun. <br> Don&apos;t forget to share your games!"]                            
+                        ]
+                    ],
+                    "done_talking":[
+                      ["say:That&apos;s enough of him for now."]
+                    ]
+                }'></div>
+
+        <!-- RED BOOK -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"43,48", 
+                    "text":"red book",
+                    "proximity":100, 
+                    "image":"book", 
+                    "scale":"0.4", 
+                    "pick_up":[
+                      ["say:The shopowner gave me a dirty look, <br/> but he doesn&apos;t appear to want this."]
+                    ],
+                    "look_at_text":"The spine is a bit worn, but otherwise in good shape.",
+                    "inv_open":[
+                      ["say:Something fell out."],
+                        ["inv_add:ticket"],
+                        ["play_sound:pageflip"]
+                    ],
+                    "inv_look_at_text":"I&apos;ve read this one <br/> a hundred times."
+                }'></div>  
+                
+                <!-- TICKET -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"35,60", 
+                    "text":"ticket",
+                    "proximity":50, 
+                    "image":"ticket", 
+                    "scale":"0.4",
+                    "hidden":true,
+                    "inv_look_at_text":"Some kind of boarding pass."
+                }'></div>
+                
+        <!-- SKULL -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"35,50", 
+                    "text":"skull",
+                    "image":"skull",
+                    "proximity":"150", 
+                    "scale":"0.5", 
+                    "pick_up":[
+                      ["say:It appears to be human."]
+                    ],
+                    "inv_look_at_text":"You never know when you&apos;ll need another one."
+                }'></div>                 
+
+        <!-- MATCHES -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"35,80", 
+                    "text":"matches",
+                    "image":"match", 
+                    "scale":"0.4", 
+                    "hidden":true, 
+                    "pick_up":true,
+                    "inv_look_at_text":"These were free!",
+                    "inv_use":[
+                      ["with:dynamite"],
+                        ["say:Time to blow something up!"],
+                        ["change_sprite:dynamitelit"],
+                        ["play_sound:lit"],
+                        ["inv_remove:matches"]
+                    ]
+                }'></div>                
+                
+                <!-- BOTTLE -->
+        <div class="JAG_Item" data-item='{
+          "type":"object", 
+                    "pos":"60,63", 
+                    "text":"glass bottle",
+                    "proximity":50, 
+                    "image":"bottle", 
+                    "scale":"0.4", 
+                    "pick_up":[
+                      ["say:A bottle!"]
+                    ],
+                    "inv_look_at_text":"It needs a ship in it."
+                }'></div>                                                   
+                
+                <!-- LAYER ITEM (COUNTER) -->
+        <div class="JAG_Item s10_counter" data-item='{"image":"counter","type":"layer", "pos":"11.5,35", "text":false}'></div>                  
+                
+                <!-- EXIT -->
+                <div class="JAG_Item s10_exit1" data-item='{"type":"exit", "pos":"95,40", "goto":"scene8", "text":"Exit", "next_image":"guybrush_still_down", "next_pos":"60,94", "next_pan":50}'></div>
+      </li>              
